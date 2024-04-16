@@ -1,5 +1,7 @@
 package com.mvngitjenkins;
 
+import java.lang.reflect.Method;
+
 import org.testng.annotations.Test;
 
 
@@ -10,11 +12,11 @@ public class SampleTestCase extends TestBase{
 	
 	
 	@Test(priority = 1)
-	public void veriyPageTitle_01() {
+	public void veriyPageTitle_01(Method method) {
 		driver.get("https://www.google.com");
 		String pageTitle = driver.getTitle();
 		System.out.println("============= PAGE TITLE IS "+pageTitle);
-		System.out.println("Conflit added by conflitCheck01 user");
+		System.out.println("Test '"+method.getName()+ "' Completed");
 	}
 	
 	
